@@ -1,0 +1,22 @@
+/**
+ * Using no libraries, compress a nul terminated sequence of characters, in
+ * place. The input characters are all in the range a-z. The input does not need
+ * to be validated. The result overwrites the input and is nul terminated.
+ * Return the number of characters in the result, not including the nul
+ * terminator.
+ *
+ * The compression algorithm is: - any letter which is not repeated is
+ * represented in the output by the same letter - any letter which is repeated
+ * is compressed by appending it with a series of ascii numbers which represent
+ * the number of repeats - any repeat bigger than 9 is represented by a series
+ * of 9's and the remaining count, i.e., a repeat of 10 is represented as 91, 11
+ * as 92, etc
+ *
+ * Examples: abab -> abab
+ * aaacbbb -> a3cb3
+ * addddddddddddc -> ad93c
+ *
+ * @param letters
+ * a nul terminated sequence of the letters a-z
+ * @return the length of the compressed character sequence not including the nul terminator
+ */
